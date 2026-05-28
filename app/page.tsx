@@ -411,14 +411,6 @@ export default function Home() {
                 <span className="w-9 h-9 rounded-lg bg-orange-50 border border-orange-100 flex items-center justify-center text-base">📍</span>
                 35 S Tungsten Way, Vineyard, UT 84059
               </div>
-              <div className="flex items-center gap-3">
-                <span className="w-9 h-9 rounded-lg bg-orange-50 border border-orange-100 flex items-center justify-center text-base">🏢</span>
-                EIN: 42-2515391
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="w-9 h-9 rounded-lg bg-orange-50 border border-orange-100 flex items-center justify-center text-base">👤</span>
-                Owner: Susana Marazia
-              </div>
             </div>
           </div>
           <form className="flex flex-col gap-4 bg-white border border-slate-200 rounded-xl p-8 shadow-sm">

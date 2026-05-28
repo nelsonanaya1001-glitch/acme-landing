@@ -332,52 +332,6 @@ export default function Home() {
       {/* ── Logistics — interactive stepper ── */}
       <LogisticsProcess />
 
-      {/* ── Why Choose Us ── */}
-      {/* ── Reliability ── */}
-      <section className="py-24 px-6 bg-[#0a1628]">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-orange-400 text-xs font-bold uppercase tracking-widest font-mono text-center mb-6">The Acme Advantage</p>
-          {/* Big statement */}
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 uppercase tracking-wide" style={{ fontFamily: "var(--font-oswald)" }}>
-              Reliability Isn't a Feature.<br />
-              <span className="text-orange-500">It's Our Foundation.</span>
-            </h2>
-            <p className="text-white/40 text-lg max-w-2xl mx-auto leading-relaxed">
-              Every warehouse, every order, every shipment — our entire operation is
-              engineered around one promise: your products arrive on time, every time.
-            </p>
-          </div>
-          {/* 3 horizontal stats */}
-          <div className="grid md:grid-cols-3 gap-px bg-white/10 rounded-xl overflow-hidden mb-10">
-            {[
-              { stat: "99.4%",  label: "On-Time Delivery Rate",   desc: "Measured across all outbound shipments over the last 12 months." },
-              { stat: "48 hrs", label: "Average Order Fulfillment", desc: "From confirmed purchase order to carrier pickup at our warehouse." },
-              { stat: "24 / 7", label: "Live Account Support",     desc: "A real person — not a bot — available any time you need us." },
-            ].map((item) => (
-              <div key={item.label} className="bg-[#0d1e35] p-8 text-center">
-                <p className="text-5xl font-black text-orange-500 mb-2">{item.stat}</p>
-                <p className="text-white font-bold mb-2">{item.label}</p>
-                <p className="text-white/30 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-          {/* Checklist row */}
-          <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
-            {[
-              "200+ authorized brand agreements — no grey market products",
-              "24 regional warehouses covering all 50 U.S. states",
-              "Transparent pricing with no hidden fees or surprise charges",
-              "Dedicated account manager assigned from day one",
-            ].map((item) => (
-              <div key={item} className="flex items-start gap-3 text-white/60 text-sm">
-                <span className="text-orange-500 mt-0.5 shrink-0 font-black">✓</span>
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ── FAQ ── */}
       <section id="faq" className="py-24 px-6 bg-white border-t border-slate-100">

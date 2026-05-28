@@ -315,7 +315,7 @@ export default function Home() {
           <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
             {[
               "Shark","Ninja","Keurig","Cuisinart","Hamilton Beach","Braun",
-              "Black+Decker","Oster","Bissell","Epson","Canon","Logitech",
+              "Black+Decker","Oster","Bissell","Epson","Canon","Logitech","3PL",
             ].map((b) => (
               <div
                 key={b}

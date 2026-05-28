@@ -215,7 +215,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a href="#contact" className="px-8 py-4 rounded bg-orange-500 hover:bg-orange-600 transition-colors font-bold text-white text-center text-lg">
-              Open an Account
+              Contact Us
             </a>
             <a href="#products" className="px-8 py-4 rounded border border-white/20 hover:border-white/40 hover:bg-white/5 transition-colors font-semibold text-white/70 text-center text-lg">
               Browse Products
@@ -389,7 +389,7 @@ export default function Home() {
           <div>
             <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-3">Get In Touch</p>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-5">
-              Start Your Wholesale Account
+              Get In Touch
             </h2>
             <p className="text-slate-500 leading-relaxed mb-8">
               Fill out the form and a member of our team will reach out within one
@@ -419,7 +419,7 @@ export default function Home() {
             <input type="text"  placeholder="Company name"     className="px-4 py-3 rounded-lg border border-slate-200 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-orange-400 transition-colors text-sm" />
             <textarea rows={3}  placeholder="Tell us about your business..." className="px-4 py-3 rounded-lg border border-slate-200 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-orange-400 transition-colors resize-none text-sm" />
             <button type="submit" className="py-3.5 rounded-lg bg-orange-500 hover:bg-orange-600 transition-colors font-bold text-white cursor-pointer">
-              Request Account Access
+              Send Message
             </button>
           </form>
         </div>

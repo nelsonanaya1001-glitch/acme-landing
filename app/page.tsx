@@ -315,7 +315,7 @@ export default function Home() {
           <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
             {[
               "Shark","Ninja","Keurig","Cuisinart","Hamilton Beach","Braun",
-              "Black+Decker","Oster","Bissell","Epson","Canon","Logitech","3PL",
+              "Black+Decker","Oster","Bissell","Epson","Canon","Logitech",
             ].map((b) => (
               <div
                 key={b}
@@ -324,6 +324,44 @@ export default function Home() {
                 {b}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3PL ── */}
+      <section className="py-24 px-6 bg-[#0a1628]">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            {/* Left — what is 3PL */}
+            <div>
+              <p className="text-orange-400 text-xs font-bold uppercase tracking-widest font-mono mb-3">Third-Party Logistics</p>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-5 uppercase tracking-wide" style={{ fontFamily: "var(--font-oswald)" }}>
+                What Is <span className="text-orange-500">3PL</span> and How Does It Work?
+              </h2>
+              <p className="text-white/50 leading-relaxed mb-6">
+                Third-Party Logistics (3PL) means outsourcing your storage, fulfillment, and shipping operations to a specialized partner — so you can focus on growing your business instead of managing warehouses.
+              </p>
+              <p className="text-white/50 leading-relaxed">
+                Acme Corp acts as your 3PL provider: we receive your inventory, store it in our regional warehouses, pick and pack orders as they come in, and ship directly to your customers — all under your brand.
+              </p>
+            </div>
+            {/* Right — how it works steps */}
+            <div className="flex flex-col gap-4">
+              {[
+                { n: "01", title: "You Send Us Inventory",      desc: "Ship your products to one or more of our 24 regional warehouses. We receive, inspect, and log every unit." },
+                { n: "02", title: "Orders Come In",             desc: "When a customer places an order on your store, it's automatically sent to our fulfillment system in real time." },
+                { n: "03", title: "We Pick, Pack & Ship",       desc: "Our team picks the right items, packs them to your specs, and ships them out — often same or next business day." },
+                { n: "04", title: "Your Customer Gets It Fast", desc: "Orders are routed through the nearest warehouse, cutting transit times and keeping your customers happy." },
+              ].map((s) => (
+                <div key={s.n} className="flex items-start gap-4 p-5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all">
+                  <span className="text-orange-500 font-black font-mono text-sm shrink-0 mt-0.5">{s.n}</span>
+                  <div>
+                    <h3 className="text-white font-bold mb-1">{s.title}</h3>
+                    <p className="text-white/40 text-sm leading-relaxed">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

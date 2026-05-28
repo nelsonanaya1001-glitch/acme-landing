@@ -175,7 +175,7 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 bg-[#0a1628] border-b border-white/10">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <span className="text-xl font-black text-white tracking-tight">
-            El Barullo<span className="text-orange-500"> LLC</span>
+            El <span className="text-orange-500">Barullo</span>
           </span>
           <div className="hidden md:flex gap-8 text-sm text-white/60">
             <a href="#about"     className="hover:text-white transition-colors">About</a>
@@ -212,7 +212,7 @@ export default function Home() {
             Scale Further.
           </h1>
           <p className="text-white/50 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
-            El Barullo LLC gives retailers and resellers direct access to 12,000+ in-demand
+            El Barullo gives retailers and resellers direct access to 12,000+ in-demand
             products — backed by 24 regional warehouses, real-time inventory, and a team
             that actually picks up the phone.
           </p>
@@ -241,7 +241,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <p className="text-slate-600 leading-relaxed mb-5">
-                El Barullo LLC works with a broad network of suppliers and product categories
+                El Barullo works with a broad network of suppliers and product categories
                 to help businesses access trusted products while maintaining smooth
                 inventory movement and reliable fulfillment operations.
               </p>
@@ -342,7 +342,7 @@ export default function Home() {
                 Third-Party Logistics (3PL) means outsourcing your storage, fulfillment, and shipping operations to a specialized partner — so you can focus on growing your business instead of managing warehouses.
               </p>
               <p className="text-white/50 leading-relaxed">
-                El Barullo LLC acts as your 3PL provider: we receive your inventory, store it in our regional warehouses, pick and pack orders as they come in, and ship directly to your customers — all under your brand.
+                El Barullo acts as your 3PL provider: we receive your inventory, store it in our regional warehouses, pick and pack orders as they come in, and ship directly to your customers — all under your brand.
               </p>
             </div>
             {/* Right — how it works steps */}
@@ -432,7 +432,7 @@ export default function Home() {
       <footer className="bg-[#0a1628] border-t border-white/10 py-10 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-white/40">
           <span className="text-lg font-black text-white tracking-tight">
-            El Barullo<span className="text-orange-500"> LLC</span>
+            El <span className="text-orange-500">Barullo</span>
           </span>
           <div className="flex flex-wrap justify-center gap-6">
             <a href="#about"     className="hover:text-white transition-colors">About</a>
@@ -441,7 +441,7 @@ export default function Home() {
             <a href="#logistics" className="hover:text-white transition-colors">Logistics</a>
             <a href="#faq"       className="hover:text-white transition-colors">FAQ</a>
           </div>
-          <p>© {new Date().getFullYear()} El Barullo LLC. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} El Barullo. All rights reserved.</p>
         </div>
       </footer>
 

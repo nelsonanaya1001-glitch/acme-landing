@@ -194,7 +194,7 @@ export default function Home() {
       </nav>
 
       {/* ── Hero ── */}
-      <section className="relative bg-[#0a1628] pt-40 pb-32 px-6 overflow-hidden">
+      <section className="relative bg-[#0a1628] min-h-screen flex items-center px-6 overflow-hidden">
         <div
           className="absolute inset-0 opacity-5 pointer-events-none"
           style={{
@@ -223,20 +223,6 @@ export default function Home() {
             <a href="#products" className="px-8 py-4 rounded border border-white/20 hover:border-white/40 hover:bg-white/5 transition-colors font-semibold text-white/70 text-center text-lg">
               Browse Products
             </a>
-          </div>
-          {/* Inline stat strip */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-xl overflow-hidden">
-            {[
-              { n: "12,000+", l: "Products" },
-              { n: "200+",    l: "Brands" },
-              { n: "48 hrs",  l: "Fulfillment" },
-              { n: "99.4%",   l: "On-Time" },
-            ].map((s) => (
-              <div key={s.l} className="bg-white/5 py-5 px-4 text-center">
-                <p className="text-2xl font-black text-white">{s.n}</p>
-                <p className="text-white/40 text-xs mt-1 uppercase tracking-widest">{s.l}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>

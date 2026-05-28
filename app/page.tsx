@@ -253,18 +253,13 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-4">
               {[
-                { icon: "🚚", title: "Nationwide Distribution", desc: "Seamless product movement to businesses across all 50 states with reliable timelines." },
-                { icon: "📦", title: "Inventory Management",    desc: "Organized warehouse operations and bulk order coordination for efficient fulfillment." },
-                { icon: "🤝", title: "Trusted Partnerships",    desc: "Built on integrity, consistency, and long-term business relationships." },
+                { title: "Nationwide Distribution", desc: "Seamless product movement to businesses across all 50 states with reliable timelines." },
+                { title: "Inventory Management",    desc: "Organized warehouse operations and bulk order coordination for efficient fulfillment." },
+                { title: "Trusted Partnerships",    desc: "Built on integrity, consistency, and long-term business relationships." },
               ].map((f) => (
-                <div key={f.title} className="flex items-start gap-4 p-5 rounded-lg border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-orange-200 transition-all">
-                  <div className="w-11 h-11 shrink-0 rounded-lg bg-orange-50 border border-orange-100 flex items-center justify-center text-xl">
-                    {f.icon}
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-800 mb-1">{f.title}</h3>
-                    <p className="text-slate-500 text-sm leading-relaxed">{f.desc}</p>
-                  </div>
+                <div key={f.title} className="p-5 rounded-lg border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-orange-200 transition-all">
+                  <h3 className="font-bold text-slate-800 mb-1">{f.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">{f.desc}</p>
                 </div>
               ))}
             </div>

@@ -21,9 +21,9 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "Acme Corp — Trusted Wholesale Distribution Partner",
+  title: "El Barullo LLC — Trusted Wholesale Distribution Partner",
   description:
-    "Acme Corp connects retailers and resellers with premium consumer goods — fast fulfillment, transparent pricing, and relationships built to last.",
+    "El Barullo LLC connects retailers and resellers with premium consumer goods — fast fulfillment, transparent pricing, and relationships built to last.",
 };
 
 export default function RootLayout({

@@ -283,21 +283,16 @@ export default function Home() {
             </p>
             <div className="grid grid-cols-2 gap-3">
               {[
-                { icon: "🏠", label: "Home Appliances"  },
-                { icon: "💻", label: "Electronics"       },
-                { icon: "🧴", label: "Beauty & Personal" },
-                { icon: "🏋️", label: "Fitness & Sports"  },
-                { icon: "🛏️", label: "Bedding & Bath"    },
-                { icon: "🍳", label: "Cookware"          },
-                { icon: "🎮", label: "Gaming & Tech"     },
-                { icon: "🧸", label: "Toys & Kids"       },
-              ].map((cat) => (
+                "Home Appliances", "Electronics",
+                "Beauty & Personal", "Fitness & Sports",
+                "Bedding & Bath", "Cookware",
+                "Gaming & Tech", "Toys & Kids",
+              ].map((label) => (
                 <div
-                  key={cat.label}
-                  className="flex items-center gap-3 px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 hover:border-orange-300 hover:bg-orange-50 transition-all cursor-pointer group"
+                  key={label}
+                  className="px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 hover:border-orange-300 hover:bg-orange-50 transition-all cursor-pointer group"
                 >
-                  <span className="text-xl">{cat.icon}</span>
-                  <span className="text-sm font-semibold text-slate-700 group-hover:text-orange-600 transition-colors">{cat.label}</span>
+                  <span className="text-sm font-semibold text-slate-700 group-hover:text-orange-600 transition-colors">{label}</span>
                 </div>
               ))}
             </div>

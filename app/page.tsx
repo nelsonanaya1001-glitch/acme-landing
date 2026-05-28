@@ -314,9 +314,8 @@ export default function Home() {
           </p>
           <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
             {[
-              "NovaBrand","Meridian","CrestLine","Orbis","Vantage","Pinnacle",
-              "Stratos","Axiom","Luminary","Nexlabs","Ironclad","Stellarco",
-              "GridWorks","Quantum","Pulsar","Foundry","Radiance","Forte",
+              "Shark","Ninja","Keurig","Cuisinart","Hamilton Beach","Braun",
+              "Black+Decker","Oster","Bissell","Epson","Canon","Logitech",
             ].map((b) => (
               <div
                 key={b}

@@ -207,14 +207,11 @@ export default function Home() {
             <span className="text-orange-300 text-xs font-semibold uppercase tracking-widest">Now Onboarding Wholesale Partners</span>
           </div>
           <h1 className="text-6xl md:text-8xl font-bold text-white leading-[1.0] mb-6 tracking-wide uppercase" style={{ fontFamily: "var(--font-oswald)" }}>
-            Stock Smarter.<br />
-            <span className="text-orange-500">Ship Faster.</span><br />
-            Scale Further.
+            Your Supply Chain. Optimized.<br />
+            <span className="text-orange-500">Faster Shipping. Smarter Stocking.</span>
           </h1>
           <p className="text-white/50 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
-            El Barullo gives retailers and resellers direct access to 12,000+ in-demand
-            products — backed by 24 regional warehouses, real-time inventory, and a team
-            that actually picks up the phone.
+            Real-time inventory, nationwide warehousing, and reliable fulfillment built for modern ecommerce brands.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a href="#contact" className="px-8 py-4 rounded bg-orange-500 hover:bg-orange-600 transition-colors font-bold text-white text-center text-lg">

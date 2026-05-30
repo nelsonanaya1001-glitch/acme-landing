@@ -1,37 +1,77 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const slides = [
-  { label: "Home Appliances", color: "from-orange-900/60 to-orange-800/20", icon: "🏠", items: "Blenders · Air Fryers · Coffee Makers · Toasters" },
-  { label: "Electronics",     color: "from-blue-900/60 to-blue-800/20",     icon: "💻", items: "Headphones · Smart Watches · Phone Accessories" },
-  { label: "Beauty & Personal",color: "from-pink-900/60 to-pink-800/20",    icon: "🧴", items: "Skincare · Hair Care · Grooming · Fragrances" },
-  { label: "Fitness & Sports", color: "from-green-900/60 to-green-800/20",  icon: "🏋️", items: "Equipment · Resistance Bands · Supplements" },
-  { label: "Bedding & Bath",   color: "from-indigo-900/60 to-indigo-800/20",icon: "🛏️", items: "Sheets · Towels · Pillows · Mattress Toppers" },
-  { label: "Cookware",         color: "from-red-900/60 to-red-800/20",      icon: "🍳", items: "Non-stick Pans · Cast Iron · Kitchen Gadgets" },
-  { label: "Gaming & Tech",    color: "from-violet-900/60 to-violet-800/20",icon: "🎮", items: "Controllers · Keyboards · Headsets · Cables" },
-  { label: "Toys & Kids",      color: "from-yellow-900/60 to-yellow-800/20",icon: "🧸", items: "Educational · Outdoor Toys · STEM · Creative" },
+  {
+    label: "Home Appliances",
+    items: "Blenders · Air Fryers · Coffee Makers",
+    img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
+  },
+  {
+    label: "Electronics",
+    items: "Headphones · Smart Watches · Accessories",
+    img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80",
+  },
+  {
+    label: "Beauty & Personal",
+    items: "Skincare · Hair Care · Grooming",
+    img: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&q=80",
+  },
+  {
+    label: "Fitness & Sports",
+    items: "Equipment · Resistance Bands · Supplements",
+    img: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80",
+  },
+  {
+    label: "Bedding & Bath",
+    items: "Sheets · Towels · Pillows",
+    img: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
+  },
+  {
+    label: "Cookware",
+    items: "Non-stick Pans · Cast Iron · Kitchen Tools",
+    img: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=800&q=80",
+  },
+  {
+    label: "Gaming & Tech",
+    items: "Controllers · Keyboards · Headsets",
+    img: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=800&q=80",
+  },
+  {
+    label: "Toys & Kids",
+    items: "Educational · Outdoor · STEM",
+    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+  },
 ];
 
 function ProductSlideshow() {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const t = setInterval(() => setCurrent((c) => (c + 1) % slides.length), 3000);
+    const t = setInterval(() => setCurrent((c) => (c + 1) % slides.length), 3500);
     return () => clearInterval(t);
   }, []);
 
   const slide = slides[current];
 
   return (
-    <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-[#0a1628] aspect-[4/3] flex flex-col justify-end">
-      <div className={`absolute inset-0 bg-gradient-to-br ${slide.color} transition-all duration-700`} />
-      <div className="absolute inset-0 flex items-center justify-center">
-        <span className="text-[120px] opacity-20 select-none">{slide.icon}</span>
-      </div>
+    <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg aspect-[4/3] flex flex-col justify-end">
+      {/* Background image */}
+      <Image
+        src={slide.img}
+        alt={slide.label}
+        fill
+        className="object-cover transition-opacity duration-700"
+        sizes="(max-width: 768px) 100vw, 50vw"
+      />
+      {/* Dark gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+      {/* Text */}
       <div className="relative p-8">
-        <p className="text-white/50 text-xs uppercase tracking-widest font-mono mb-2">Category</p>
-        <h3 className="text-2xl font-black text-white mb-2">{slide.label}</h3>
-        <p className="text-white/50 text-sm">{slide.items}</p>
+        <p className="text-white/60 text-xs uppercase tracking-widest font-mono mb-2">Category</p>
+        <h3 className="text-2xl font-black text-white mb-1">{slide.label}</h3>
+        <p className="text-white/60 text-sm">{slide.items}</p>
       </div>
       {/* Dot indicators */}
       <div className="relative flex gap-1.5 px-8 pb-6">
@@ -39,7 +79,7 @@ function ProductSlideshow() {
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`h-1.5 rounded-full transition-all ${i === current ? "w-6 bg-orange-500" : "w-1.5 bg-white/30"}`}
+            className={`h-1.5 rounded-full transition-all ${i === current ? "w-6 bg-orange-500" : "w-1.5 bg-white/40"}`}
           />
         ))}
       </div>

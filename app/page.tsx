@@ -120,13 +120,7 @@ const steps = [
   { n: "07", icon: "🤝", title: "Account Growth Support",       desc: "Your dedicated rep proactively surfaces new products, promotions, and restocking opportunities to grow your margins.", detail: "Quarterly business reviews help align your purchasing strategy with market trends and upcoming product launches." },
 ];
 
-const logisticsBgs = [
-  "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=80",
-  "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1600&q=80",
-  "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1600&q=80",
-  "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1600&q=80",
-  "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1600&q=80",
-];
+const logisticsBgs = ["/log1.jpg", "/log2.jpg", "/log3.jpg", "/log4.jpg", "/log5.jpg"];
 
 function LogisticsProcess() {
   const [active, setActive] = useState(0);

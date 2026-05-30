@@ -215,7 +215,7 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 bg-[#0f0f0f] border-b border-white/10">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <span className="text-xl font-black text-white tracking-tight">
-            <Image src="/logo.png" alt="El Barullo" width={90} height={90} className="object-contain w-16 h-16" style={{mixBlendMode:"screen", filter:"contrast(2) brightness(0.85) saturate(1.4)"}} />
+            <div className="w-16 h-16 overflow-hidden flex items-center justify-center" style={{mixBlendMode:"screen"}}><Image src="/logo.png" alt="El Barullo" width={90} height={90} className="object-contain scale-[1.22]" style={{filter:"contrast(2) brightness(0.85) saturate(1.4)"}} /></div>
           </span>
           <div className="hidden md:flex gap-8 text-sm text-white/60">
             <a href="#about"     className="hover:text-white transition-colors">About</a>
@@ -469,7 +469,7 @@ export default function Home() {
       <footer className="bg-[#0f0f0f] border-t border-white/10 py-10 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-white/40">
           <span className="text-lg font-black text-white tracking-tight">
-            <Image src="/logo.png" alt="El Barullo" width={90} height={90} className="object-contain w-16 h-16" style={{mixBlendMode:"screen", filter:"contrast(2) brightness(0.85) saturate(1.4)"}} />
+            <div className="w-16 h-16 overflow-hidden flex items-center justify-center" style={{mixBlendMode:"screen"}}><Image src="/logo.png" alt="El Barullo" width={90} height={90} className="object-contain scale-[1.22]" style={{filter:"contrast(2) brightness(0.85) saturate(1.4)"}} /></div>
           </span>
           <div className="flex flex-wrap justify-center gap-6">
             <a href="#about"     className="hover:text-white transition-colors">About</a>

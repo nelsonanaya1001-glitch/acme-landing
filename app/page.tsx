@@ -120,12 +120,41 @@ const steps = [
   { n: "07", icon: "🤝", title: "Account Growth Support",       desc: "Your dedicated rep proactively surfaces new products, promotions, and restocking opportunities to grow your margins.", detail: "Quarterly business reviews help align your purchasing strategy with market trends and upcoming product launches." },
 ];
 
+const logisticsBgs = [
+  "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=80",
+  "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1600&q=80",
+  "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1600&q=80",
+  "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1600&q=80",
+  "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1600&q=80",
+];
+
 function LogisticsProcess() {
   const [active, setActive] = useState(0);
+  const [bg, setBg] = useState(0);
   const step = steps[active];
+
+  useEffect(() => {
+    const t = setInterval(() => setBg((b) => (b + 1) % logisticsBgs.length), 4000);
+    return () => clearInterval(t);
+  }, []);
+
   return (
-    <section id="logistics" className="py-24 px-6 bg-slate-50 border-t border-slate-100">
-      <div className="max-w-6xl mx-auto">
+    <section id="logistics" className="relative py-24 px-6 border-t border-slate-100 overflow-hidden">
+      {/* Background slideshow */}
+      <div className="absolute inset-0 -z-10">
+        {logisticsBgs.map((src, i) => (
+          <div
+            key={src}
+            className="absolute inset-0 transition-opacity duration-1000"
+            style={{ opacity: i === bg ? 1 : 0 }}
+          >
+            <Image src={src} alt="" fill className="object-cover" sizes="100vw" />
+          </div>
+        ))}
+        {/* White overlay so content stays readable */}
+        <div className="absolute inset-0 bg-white/85" />
+      </div>
+      <div className="relative max-w-6xl mx-auto">
         <p className="text-red-500 text-xs font-bold uppercase tracking-widest font-mono text-center mb-3">How It Works</p>
         <h2 className="text-3xl md:text-4xl font-black text-center text-slate-900 mb-3">Our Logistics Process</h2>
         <p className="text-center text-slate-500 mb-14 max-w-xl mx-auto">

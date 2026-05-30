@@ -215,7 +215,7 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 bg-[#0f0f0f] border-b border-white/10">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <span className="text-xl font-black text-white tracking-tight">
-            <span className="inline-flex items-center gap-2.5"><span className="w-7 h-7 rounded bg-red-600 flex items-center justify-center font-black text-white text-sm leading-none" style={{fontFamily:"var(--font-oswald)"}}>B</span>El <span className="text-red-500">Barullo</span></span>
+            <Image src="/logo.png" alt="El Barullo" width={120} height={40} className="object-contain" style={{mixBlendMode:"screen"}} />
           </span>
           <div className="hidden md:flex gap-8 text-sm text-white/60">
             <a href="#about"     className="hover:text-white transition-colors">About</a>
@@ -469,7 +469,7 @@ export default function Home() {
       <footer className="bg-[#0f0f0f] border-t border-white/10 py-10 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-white/40">
           <span className="text-lg font-black text-white tracking-tight">
-            <span className="inline-flex items-center gap-2.5"><span className="w-7 h-7 rounded bg-red-600 flex items-center justify-center font-black text-white text-sm leading-none" style={{fontFamily:"var(--font-oswald)"}}>B</span>El <span className="text-red-500">Barullo</span></span>
+            <Image src="/logo.png" alt="El Barullo" width={120} height={40} className="object-contain" style={{mixBlendMode:"screen"}} />
           </span>
           <div className="flex flex-wrap justify-center gap-6">
             <a href="#about"     className="hover:text-white transition-colors">About</a>

@@ -79,7 +79,7 @@ function ProductSlideshow() {
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`h-1.5 rounded-full transition-all ${i === current ? "w-6 bg-orange-500" : "w-1.5 bg-white/40"}`}
+            className={`h-1.5 rounded-full transition-all ${i === current ? "w-6 bg-red-600" : "w-1.5 bg-white/40"}`}
           />
         ))}
       </div>
@@ -126,7 +126,7 @@ function LogisticsProcess() {
   return (
     <section id="logistics" className="py-24 px-6 bg-slate-50 border-t border-slate-100">
       <div className="max-w-6xl mx-auto">
-        <p className="text-orange-500 text-xs font-bold uppercase tracking-widest font-mono text-center mb-3">How It Works</p>
+        <p className="text-red-500 text-xs font-bold uppercase tracking-widest font-mono text-center mb-3">How It Works</p>
         <h2 className="text-3xl md:text-4xl font-black text-center text-slate-900 mb-3">Our Logistics Process</h2>
         <p className="text-center text-slate-500 mb-14 max-w-xl mx-auto">
           From first order to ongoing replenishment — click each step to learn more.
@@ -140,11 +140,11 @@ function LogisticsProcess() {
                 onClick={() => setActive(i)}
                 className={`flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-all ${
                   i === active
-                    ? "bg-[#0a1628] text-white shadow-md"
-                    : "bg-white border border-slate-200 text-slate-600 hover:border-orange-300 hover:text-orange-600"
+                    ? "bg-[#0f0f0f] text-white shadow-md"
+                    : "bg-white border border-slate-200 text-slate-600 hover:border-red-300 hover:text-red-600"
                 }`}
               >
-                <span className={`text-xs font-black font-mono shrink-0 ${i === active ? "text-orange-400" : "text-slate-400"}`}>
+                <span className={`text-xs font-black font-mono shrink-0 ${i === active ? "text-red-400" : "text-slate-400"}`}>
                   {s.n}
                 </span>
                 <span className="text-sm font-semibold leading-tight">{s.title}</span>
@@ -155,11 +155,11 @@ function LogisticsProcess() {
           <div className="bg-white border border-slate-200 rounded-2xl p-10 shadow-sm min-h-[340px] flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center text-3xl">
+                <div className="w-16 h-16 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-3xl">
                   {step.icon}
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-orange-500 uppercase tracking-widest font-mono">Step {step.n}</p>
+                  <p className="text-xs font-bold text-red-500 uppercase tracking-widest font-mono">Step {step.n}</p>
                   <h3 className="text-2xl font-black text-slate-900">{step.title}</h3>
                 </div>
               </div>
@@ -171,7 +171,7 @@ function LogisticsProcess() {
               <button
                 onClick={() => setActive((a) => Math.max(0, a - 1))}
                 disabled={active === 0}
-                className="px-5 py-2.5 rounded-lg border border-slate-200 text-sm font-semibold text-slate-600 hover:border-orange-300 hover:text-orange-600 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                className="px-5 py-2.5 rounded-lg border border-slate-200 text-sm font-semibold text-slate-600 hover:border-red-300 hover:text-red-600 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
               >
                 ← Previous
               </button>
@@ -179,7 +179,7 @@ function LogisticsProcess() {
               <button
                 onClick={() => setActive((a) => Math.min(steps.length - 1, a + 1))}
                 disabled={active === steps.length - 1}
-                className="px-5 py-2.5 rounded-lg bg-orange-500 hover:bg-orange-600 text-sm font-semibold text-white disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                className="px-5 py-2.5 rounded-lg bg-red-600 hover:bg-red-700 text-sm font-semibold text-white disabled:opacity-30 disabled:cursor-not-allowed transition-all"
               >
                 Next →
               </button>
@@ -197,10 +197,10 @@ function FAQ({ q, a }: { q: string; a: string }) {
     <div className="border-b border-slate-200">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center py-5 text-left text-slate-800 hover:text-orange-600 transition-colors"
+        className="w-full flex justify-between items-center py-5 text-left text-slate-800 hover:text-red-600 transition-colors"
       >
         <span className="font-semibold pr-4">{q}</span>
-        <span className="text-orange-500 text-2xl shrink-0 leading-none font-light">{open ? "−" : "+"}</span>
+        <span className="text-red-500 text-2xl shrink-0 leading-none font-light">{open ? "−" : "+"}</span>
       </button>
       {open && <p className="pb-5 text-slate-500 text-sm leading-relaxed">{a}</p>}
     </div>
@@ -212,10 +212,10 @@ export default function Home() {
     <main className="min-h-screen bg-white text-slate-800 font-sans">
 
       {/* ── Nav ── */}
-      <nav className="fixed top-0 w-full z-50 bg-[#0a1628] border-b border-white/10">
+      <nav className="fixed top-0 w-full z-50 bg-[#0f0f0f] border-b border-white/10">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <span className="text-xl font-black text-white tracking-tight">
-            El <span className="text-orange-500">Barullo</span>
+            <span className="inline-flex items-center gap-2.5"><span className="w-7 h-7 rounded bg-red-600 flex items-center justify-center font-black text-white text-sm leading-none" style={{fontFamily:"var(--font-oswald)"}}>B</span>El <span className="text-red-500">Barullo</span></span>
           </span>
           <div className="hidden md:flex gap-8 text-sm text-white/60">
             <a href="#about"     className="hover:text-white transition-colors">About</a>
@@ -226,7 +226,7 @@ export default function Home() {
           </div>
           <a
             href="#contact"
-            className="text-sm px-5 py-2.5 rounded bg-orange-500 hover:bg-orange-600 transition-colors font-semibold text-white"
+            className="text-sm px-5 py-2.5 rounded bg-red-600 hover:bg-red-700 transition-colors font-semibold text-white"
           >
             Contact Us
           </a>
@@ -234,7 +234,7 @@ export default function Home() {
       </nav>
 
       {/* ── Hero ── */}
-      <section className="relative bg-[#0a1628] min-h-screen flex items-center px-6 overflow-hidden">
+      <section className="relative bg-[#0f0f0f] min-h-screen flex items-center px-6 overflow-hidden">
         <div
           className="absolute inset-0 opacity-5 pointer-events-none"
           style={{
@@ -242,19 +242,19 @@ export default function Home() {
           }}
         />
         <div className="relative max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded bg-orange-500/20 border border-orange-500/30">
+          <div className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded bg-red-600/20 border border-red-500/30">
             <span className="w-2 h-2 rounded-full bg-orange-400" />
-            <span className="text-orange-300 text-xs font-semibold uppercase tracking-widest">Now Onboarding Wholesale Partners</span>
+            <span className="text-red-300 text-xs font-semibold uppercase tracking-widest">Now Onboarding Wholesale Partners</span>
           </div>
           <h1 className="text-6xl md:text-8xl font-bold text-white leading-[1.0] mb-6 tracking-wide uppercase" style={{ fontFamily: "var(--font-oswald)" }}>
             Your Supply Chain. Optimized.<br />
-            <span className="text-orange-500">Faster Shipping. Smarter Stocking.</span>
+            <span className="text-red-500">Faster Shipping. Smarter Stocking.</span>
           </h1>
           <p className="text-white/50 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
             Real-time inventory, nationwide warehousing, and reliable fulfillment built for modern ecommerce brands.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="#contact" className="px-8 py-4 rounded bg-orange-500 hover:bg-orange-600 transition-colors font-bold text-white text-center text-lg">
+            <a href="#contact" className="px-8 py-4 rounded bg-red-600 hover:bg-red-700 transition-colors font-bold text-white text-center text-lg">
               Contact Us
             </a>
             <a href="#products" className="px-8 py-4 rounded border border-white/20 hover:border-white/40 hover:bg-white/5 transition-colors font-semibold text-white/70 text-center text-lg">
@@ -267,7 +267,7 @@ export default function Home() {
       {/* ── About — text left, cards right ── */}
       <section id="about" className="py-24 px-6 bg-slate-50">
         <div className="max-w-6xl mx-auto">
-          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest text-center mb-3">Who We Are</p>
+          <p className="text-red-500 text-xs font-bold uppercase tracking-widest text-center mb-3">Who We Are</p>
           <h2 className="text-3xl md:text-4xl font-black text-center text-slate-900 mb-3">
             Building Reliable Wholesale &amp; Logistics Operations
           </h2>
@@ -294,7 +294,7 @@ export default function Home() {
                 { title: "Inventory Management",    desc: "Organized warehouse operations and bulk order coordination for efficient fulfillment." },
                 { title: "Trusted Partnerships",    desc: "Built on integrity, consistency, and long-term business relationships." },
               ].map((f) => (
-                <div key={f.title} className="p-5 rounded-lg border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-orange-200 transition-all">
+                <div key={f.title} className="p-5 rounded-lg border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-red-200 transition-all">
                   <h3 className="font-bold text-slate-800 mb-1">{f.title}</h3>
                   <p className="text-slate-500 text-sm leading-relaxed">{f.desc}</p>
                 </div>
@@ -310,7 +310,7 @@ export default function Home() {
 
           {/* Left — label, heading, description, category list */}
           <div>
-            <p className="text-orange-500 text-xs font-bold uppercase tracking-widest font-mono mb-3">What We Distribute</p>
+            <p className="text-red-500 text-xs font-bold uppercase tracking-widest font-mono mb-3">What We Distribute</p>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">
               Wholesale Products We Manage
             </h2>
@@ -327,9 +327,9 @@ export default function Home() {
               ].map((label) => (
                 <div
                   key={label}
-                  className="px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 hover:border-orange-300 hover:bg-orange-50 transition-all cursor-pointer group"
+                  className="px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 hover:border-red-300 hover:bg-red-50 transition-all cursor-pointer group"
                 >
-                  <span className="text-sm font-semibold text-slate-700 group-hover:text-orange-600 transition-colors">{label}</span>
+                  <span className="text-sm font-semibold text-slate-700 group-hover:text-red-600 transition-colors">{label}</span>
                 </div>
               ))}
             </div>
@@ -344,7 +344,7 @@ export default function Home() {
       {/* ── Brands ── */}
       <section id="brands" className="py-24 px-6 bg-slate-50 border-t border-slate-100">
         <div className="max-w-6xl mx-auto">
-          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest text-center mb-3">Our Network</p>
+          <p className="text-red-500 text-xs font-bold uppercase tracking-widest text-center mb-3">Our Network</p>
           <h2 className="text-3xl md:text-4xl font-black text-center text-slate-900 mb-3">Authorized Brands</h2>
           <p className="text-center text-slate-500 mb-14 max-w-xl mx-auto">
             Officially authorized distribution agreements with over 200 top consumer brands.
@@ -356,7 +356,7 @@ export default function Home() {
             ].map((b) => (
               <div
                 key={b}
-                className="py-4 px-3 rounded-lg border border-slate-200 bg-white text-slate-500 hover:text-orange-600 hover:border-orange-200 hover:shadow-sm transition-all text-xs font-bold text-center uppercase tracking-wide"
+                className="py-4 px-3 rounded-lg border border-slate-200 bg-white text-slate-500 hover:text-red-600 hover:border-red-200 hover:shadow-sm transition-all text-xs font-bold text-center uppercase tracking-wide"
               >
                 {b}
               </div>
@@ -366,14 +366,14 @@ export default function Home() {
       </section>
 
       {/* ── 3PL ── */}
-      <section className="py-24 px-6 bg-[#0a1628]">
+      <section className="py-24 px-6 bg-[#0f0f0f]">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Left — what is 3PL */}
             <div>
-              <p className="text-orange-400 text-xs font-bold uppercase tracking-widest font-mono mb-3">Third-Party Logistics</p>
+              <p className="text-red-400 text-xs font-bold uppercase tracking-widest font-mono mb-3">Third-Party Logistics</p>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-5 uppercase tracking-wide" style={{ fontFamily: "var(--font-oswald)" }}>
-                What Is <span className="text-orange-500">3PL</span> and How Does It Work?
+                What Is <span className="text-red-500">3PL</span> and How Does It Work?
               </h2>
               <p className="text-white/50 leading-relaxed mb-6">
                 Third-Party Logistics (3PL) means outsourcing your storage, fulfillment, and shipping operations to a specialized partner — so you can focus on growing your business instead of managing warehouses.
@@ -391,7 +391,7 @@ export default function Home() {
                 { n: "04", title: "Your Customer Gets It Fast", desc: "Orders are routed through the nearest warehouse, cutting transit times and keeping your customers happy." },
               ].map((s) => (
                 <div key={s.n} className="flex items-start gap-4 p-5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all">
-                  <span className="text-orange-500 font-black font-mono text-sm shrink-0 mt-0.5">{s.n}</span>
+                  <span className="text-red-500 font-black font-mono text-sm shrink-0 mt-0.5">{s.n}</span>
                   <div>
                     <h3 className="text-white font-bold mb-1">{s.title}</h3>
                     <p className="text-white/40 text-sm leading-relaxed">{s.desc}</p>
@@ -410,7 +410,7 @@ export default function Home() {
       {/* ── FAQ ── */}
       <section id="faq" className="py-24 px-6 bg-white border-t border-slate-100">
         <div className="max-w-3xl mx-auto">
-          <p className="text-orange-500 text-xs font-bold uppercase tracking-widest text-center mb-3">FAQ</p>
+          <p className="text-red-500 text-xs font-bold uppercase tracking-widest text-center mb-3">FAQ</p>
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 text-center mb-3">
             Frequently Asked Questions
           </h2>
@@ -427,7 +427,7 @@ export default function Home() {
       <section id="contact" className="py-24 px-6 bg-slate-50 border-t border-slate-100">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
           <div>
-            <p className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-3">Get In Touch</p>
+            <p className="text-red-500 text-xs font-bold uppercase tracking-widest mb-3">Get In Touch</p>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-5">
               Get In Touch
             </h2>
@@ -437,28 +437,28 @@ export default function Home() {
             </p>
             <div className="space-y-4 text-sm text-slate-600">
               <div className="flex items-center gap-3">
-                <span className="w-9 h-9 rounded-lg bg-orange-50 border border-orange-100 flex items-center justify-center text-base">📧</span>
+                <span className="w-9 h-9 rounded-lg bg-red-50 border border-red-100 flex items-center justify-center text-base">📧</span>
                 Elbarullosm@gmail.com
               </div>
               <div className="flex items-center gap-3">
-                <span className="w-9 h-9 rounded-lg bg-orange-50 border border-orange-100 flex items-center justify-center text-base">📞</span>
+                <span className="w-9 h-9 rounded-lg bg-red-50 border border-red-100 flex items-center justify-center text-base">📞</span>
                 (801) 718-5391
               </div>
               <div className="flex items-center gap-3">
-                <span className="w-9 h-9 rounded-lg bg-orange-50 border border-orange-100 flex items-center justify-center text-base">📍</span>
+                <span className="w-9 h-9 rounded-lg bg-red-50 border border-red-100 flex items-center justify-center text-base">📍</span>
                 35 S Tungsten Way, Vineyard, UT 84059
               </div>
             </div>
           </div>
           <form className="flex flex-col gap-4 bg-white border border-slate-200 rounded-xl p-8 shadow-sm">
             <div className="grid grid-cols-2 gap-4">
-              <input type="text"  placeholder="First name"      className="px-4 py-3 rounded-lg border border-slate-200 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-orange-400 transition-colors text-sm" />
-              <input type="text"  placeholder="Last name"       className="px-4 py-3 rounded-lg border border-slate-200 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-orange-400 transition-colors text-sm" />
+              <input type="text"  placeholder="First name"      className="px-4 py-3 rounded-lg border border-slate-200 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-red-500 transition-colors text-sm" />
+              <input type="text"  placeholder="Last name"       className="px-4 py-3 rounded-lg border border-slate-200 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-red-500 transition-colors text-sm" />
             </div>
-            <input type="email" placeholder="Business email"   className="px-4 py-3 rounded-lg border border-slate-200 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-orange-400 transition-colors text-sm" />
-            <input type="text"  placeholder="Company name"     className="px-4 py-3 rounded-lg border border-slate-200 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-orange-400 transition-colors text-sm" />
-            <textarea rows={3}  placeholder="Tell us about your business..." className="px-4 py-3 rounded-lg border border-slate-200 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-orange-400 transition-colors resize-none text-sm" />
-            <button type="submit" className="py-3.5 rounded-lg bg-orange-500 hover:bg-orange-600 transition-colors font-bold text-white cursor-pointer">
+            <input type="email" placeholder="Business email"   className="px-4 py-3 rounded-lg border border-slate-200 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-red-500 transition-colors text-sm" />
+            <input type="text"  placeholder="Company name"     className="px-4 py-3 rounded-lg border border-slate-200 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-red-500 transition-colors text-sm" />
+            <textarea rows={3}  placeholder="Tell us about your business..." className="px-4 py-3 rounded-lg border border-slate-200 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-red-500 transition-colors resize-none text-sm" />
+            <button type="submit" className="py-3.5 rounded-lg bg-red-600 hover:bg-red-700 transition-colors font-bold text-white cursor-pointer">
               Send Message
             </button>
           </form>
@@ -466,10 +466,10 @@ export default function Home() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="bg-[#0a1628] border-t border-white/10 py-10 px-6">
+      <footer className="bg-[#0f0f0f] border-t border-white/10 py-10 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-white/40">
           <span className="text-lg font-black text-white tracking-tight">
-            El <span className="text-orange-500">Barullo</span>
+            <span className="inline-flex items-center gap-2.5"><span className="w-7 h-7 rounded bg-red-600 flex items-center justify-center font-black text-white text-sm leading-none" style={{fontFamily:"var(--font-oswald)"}}>B</span>El <span className="text-red-500">Barullo</span></span>
           </span>
           <div className="flex flex-wrap justify-center gap-6">
             <a href="#about"     className="hover:text-white transition-colors">About</a>

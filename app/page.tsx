@@ -139,7 +139,7 @@ function LogisticsProcess() {
   }, []);
 
   return (
-    <section id="logistics" className="relative py-24 px-6 border-t border-slate-100 overflow-hidden">
+    <section id="logistics" className="relative py-24 px-6 overflow-hidden bg-slate-800">
       {/* Background slideshow */}
       <div className="absolute inset-0 -z-10">
         {logisticsBgs.map((src, i) => (
@@ -151,13 +151,13 @@ function LogisticsProcess() {
             <Image src={src} alt="" fill className="object-cover" sizes="100vw" />
           </div>
         ))}
-        {/* White overlay so content stays readable */}
-        <div className="absolute inset-0 bg-white/85" />
+        {/* Overlay so content stays readable */}
+        <div className="absolute inset-0 bg-black/55" />
       </div>
       <div className="relative max-w-6xl mx-auto">
-        <p className="text-red-500 text-xs font-bold uppercase tracking-widest font-mono text-center mb-3">How It Works</p>
-        <h2 className="text-3xl md:text-4xl font-black text-center text-slate-900 mb-3">Our Logistics Process</h2>
-        <p className="text-center text-slate-500 mb-14 max-w-xl mx-auto">
+        <p className="text-red-400 text-xs font-bold uppercase tracking-widest font-mono text-center mb-3">How It Works</p>
+        <h2 className="text-3xl md:text-4xl font-black text-center text-white mb-3">Our Logistics Process</h2>
+        <p className="text-center text-white/60 mb-14 max-w-xl mx-auto">
           From first order to ongoing replenishment — click each step to learn more.
         </p>
         <div className="grid md:grid-cols-[280px_1fr] gap-6 items-start">

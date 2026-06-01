@@ -33,18 +33,6 @@ const categories = [
 ];
 
 /* ─── Components ────────────────────────────────────────── */
-function FAQItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="border-b border-slate-200">
-      <button onClick={() => setOpen(!open)} className="w-full flex justify-between items-center py-5 text-left text-slate-800 hover:text-red-600 transition-colors">
-        <span className="font-semibold pr-4 text-sm">{q}</span>
-        <span className="text-red-500 text-xl shrink-0">{open ? "−" : "+"}</span>
-      </button>
-      {open && <p className="pb-5 text-slate-500 text-sm leading-relaxed">{a}</p>}
-    </div>
-  );
-}
 
 function LogisticsProcess() {
   const [active, setActive] = useState(0);
@@ -109,10 +97,10 @@ function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40" />
       <div className="relative max-w-3xl">
         <h1 className="text-6xl md:text-8xl font-bold text-white leading-none mb-6 uppercase" style={{ fontFamily: "var(--font-oswald)" }}>
-          Your Supply Chain.<br /><span className="text-red-500">Optimized.</span>
+          Premium Products.<br /><span className="text-red-500">Wholesale Prices.</span><br />Delivered Fast.
         </h1>
         <p className="text-white/50 text-lg md:text-xl max-w-xl leading-relaxed mb-10">
-          Real-time inventory, nationwide warehousing, and reliable fulfillment built for modern ecommerce brands.
+          Thousands of in-demand consumer products available at wholesale — backed by nationwide warehousing, real-time inventory, and fast reliable fulfillment.
         </p>
         <div className="flex flex-wrap gap-4">
           <a href="#contact" className="px-8 py-4 rounded bg-red-600 hover:bg-red-700 transition-colors font-bold text-white text-lg">Contact Us</a>
@@ -245,8 +233,8 @@ export default function Home() {
       {/* ── NAV ── minimal, logo left, links right */}
       <nav className="fixed top-0 w-full z-50 bg-[#0f0f0f] border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="w-16 h-16 overflow-hidden flex items-center justify-center" style={{ mixBlendMode: "screen" }}>
-            <Image src="/logo.png" alt="El Barullo" width={90} height={90} className="object-contain scale-[1.22]" style={{ filter: "contrast(2) brightness(0.85) saturate(1.4)" }} />
+          <div className="w-24 h-24 overflow-hidden flex items-center justify-center" style={{ mixBlendMode: "screen" }}>
+            <Image src="/logo.png" alt="El Barullo" width={130} height={130} className="object-contain scale-[1.22]" style={{ filter: "contrast(2) brightness(0.85) saturate(1.4)" }} />
           </div>
           <div className="hidden md:flex items-center gap-1 bg-white/10 rounded-full px-2 py-1">
             {["Products","About","Brands","Logistics","FAQ"].map(l => (

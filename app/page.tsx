@@ -25,11 +25,11 @@ const steps = [
 
 /* ─── Products ──────────────────────────────────────────── */
 const categories = [
-  { label: "Home Appliances",  sub: "Blenders · Air Fryers · Coffee Makers · Toasters",   img: "/cat1.jpg" },
-  { label: "Electronics",      sub: "Headphones · Smart Watches · Accessories",            img: "/cat2.jpg" },
-  { label: "Beauty & Personal",sub: "Skincare · Hair Care · Grooming · Fragrances",        img: "/cat3.jpg" },
-  { label: "Bedding & Bath",   sub: "Sheets · Towels · Pillows · Mattress Toppers",        img: "/cat4.jpg" },
-  { label: "Cookware",         sub: "Non-stick Pans · Cast Iron · Kitchen Tools",          img: "/cat5.jpg" },
+  { label: "Home Appliances",  sub: "Blenders · Air Fryers · Microwaves · Toasters",      img: "/cat1.jpg" },
+  { label: "Home Appliances",  sub: "Coffee Makers · Juicers · Food Processors · Mixers", img: "/appl2.jpg" },
+  { label: "Electronics",      sub: "Headphones · Earbuds · Bluetooth Speakers · Cables", img: "/cat2.jpg" },
+  { label: "Electronics",      sub: "Smart Watches · Phone Accessories · Chargers · Hubs",img: "/elec2.jpg" },
+  { label: "Cookware",         sub: "Non-stick Pans · Cast Iron · Kitchen Tools · Sets",  img: "/cat5.jpg" },
 ];
 
 /* ─── Components ────────────────────────────────────────── */

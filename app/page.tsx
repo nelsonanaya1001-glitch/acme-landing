@@ -92,6 +92,58 @@ function LogisticsProcess() {
   );
 }
 
+const heroSlides = ["/log1.jpg","/log2.jpg","/log3.jpg","/log4.jpg","/log5.jpg"];
+
+function HeroSection() {
+  const [slide, setSlide] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setSlide(s => (s + 1) % heroSlides.length), 5000);
+    return () => clearInterval(t);
+  }, []);
+  return (
+    <section className="relative min-h-screen flex items-end pb-24 px-8 md:px-16 overflow-hidden bg-[#0f0f0f]">
+      {heroSlides.map((src, i) => (
+        <div key={src} className="absolute inset-0 transition-opacity duration-1000" style={{ opacity: i === slide ? 1 : 0 }}>
+          <Image src={src} alt="" fill className="object-cover opacity-50" sizes="100vw" priority={i === 0} />
+        </div>
+      ))}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40" />
+      <div className="relative max-w-3xl">
+        <div className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full bg-red-600/20 border border-red-500/40">
+          <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+          <span className="text-red-300 text-xs font-semibold uppercase tracking-widest">Now Onboarding Partners</span>
+        </div>
+        <h1 className="text-6xl md:text-8xl font-bold text-white leading-none mb-6 uppercase" style={{ fontFamily: "var(--font-oswald)" }}>
+          Your Supply Chain.<br /><span className="text-red-500">Optimized.</span>
+        </h1>
+        <p className="text-white/50 text-lg md:text-xl max-w-xl leading-relaxed mb-10">
+          Real-time inventory, nationwide warehousing, and reliable fulfillment built for modern ecommerce brands.
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <a href="#contact" className="px-8 py-4 rounded bg-red-600 hover:bg-red-700 transition-colors font-bold text-white text-lg">Contact Us</a>
+          <a href="#products" className="px-8 py-4 rounded border border-white/30 hover:border-white/60 hover:bg-white/5 transition-colors font-semibold text-white/70 text-lg">Browse Products</a>
+        </div>
+      </div>
+      {/* Dot indicators */}
+      <div className="absolute bottom-28 left-8 md:left-16 flex gap-2">
+        {heroSlides.map((_, i) => (
+          <button key={i} onClick={() => setSlide(i)}
+            className={`h-1 rounded-full transition-all ${i === slide ? "w-8 bg-red-500" : "w-3 bg-white/30"}`} />
+        ))}
+      </div>
+      {/* Bottom stat bar */}
+      <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 grid grid-cols-4 divide-x divide-white/10">
+        {[["12,000+","Products"],["200+","Brands"],["48 hrs","Fulfillment"],["99.4%","On-Time"]].map(([n,l]) => (
+          <div key={l} className="py-5 text-center">
+            <p className="text-2xl font-black text-white">{n}</p>
+            <p className="text-white/40 text-xs uppercase tracking-widest mt-0.5">{l}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 /* ═══════════════════════════════════════════════════════════
    PAGE
 ═══════════════════════════════════════════════════════════ */
@@ -114,36 +166,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* ── HERO ── full-screen, left-aligned, warehouse bg */}
-      <section className="relative min-h-screen flex items-end pb-24 px-8 md:px-16 overflow-hidden bg-[#0f0f0f]">
-        <Image src="/log1.jpg" alt="" fill className="object-cover opacity-40" sizes="100vw" priority />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
-        <div className="relative max-w-3xl">
-          <div className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full bg-red-600/20 border border-red-500/40">
-            <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-            <span className="text-red-300 text-xs font-semibold uppercase tracking-widest">Now Onboarding Partners</span>
-          </div>
-          <h1 className="text-6xl md:text-8xl font-bold text-white leading-none mb-6 uppercase" style={{ fontFamily: "var(--font-oswald)" }}>
-            Your Supply Chain.<br /><span className="text-red-500">Optimized.</span>
-          </h1>
-          <p className="text-white/50 text-lg md:text-xl max-w-xl leading-relaxed mb-10">
-            Real-time inventory, nationwide warehousing, and reliable fulfillment built for modern ecommerce brands.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <a href="#contact" className="px-8 py-4 rounded bg-red-600 hover:bg-red-700 transition-colors font-bold text-white text-lg">Contact Us</a>
-            <a href="#products" className="px-8 py-4 rounded border border-white/30 hover:border-white/60 hover:bg-white/5 transition-colors font-semibold text-white/70 text-lg">Browse Products</a>
-          </div>
-        </div>
-        {/* Bottom stat bar */}
-        <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 grid grid-cols-4 divide-x divide-white/10">
-          {[["12,000+","Products"],["200+","Brands"],["48 hrs","Fulfillment"],["99.4%","On-Time"]].map(([n,l]) => (
-            <div key={l} className="py-5 text-center">
-              <p className="text-2xl font-black text-white">{n}</p>
-              <p className="text-white/40 text-xs uppercase tracking-widest mt-0.5">{l}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <HeroSection />
 
       {/* ── PRODUCTS ── alternating full-width rows */}
       <section id="products" className="py-24">

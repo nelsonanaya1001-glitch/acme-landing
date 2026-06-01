@@ -25,11 +25,11 @@ const steps = [
 
 /* ─── Products ──────────────────────────────────────────── */
 const categories = [
-  { label: "Home Appliances",  sub: "Blenders · Air Fryers · Coffee Makers · Toasters",   img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80" },
-  { label: "Electronics",      sub: "Headphones · Smart Watches · Accessories",            img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=900&q=80" },
-  { label: "Beauty & Personal",sub: "Skincare · Hair Care · Grooming · Fragrances",        img: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=900&q=80" },
-  { label: "Bedding & Bath",   sub: "Sheets · Towels · Pillows · Mattress Toppers",        img: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=900&q=80" },
-  { label: "Cookware",         sub: "Non-stick Pans · Cast Iron · Kitchen Tools",          img: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=900&q=80" },
+  { label: "Home Appliances",  sub: "Blenders · Air Fryers · Coffee Makers · Toasters",   img: "/cat1.jpg" },
+  { label: "Electronics",      sub: "Headphones · Smart Watches · Accessories",            img: "/cat2.jpg" },
+  { label: "Beauty & Personal",sub: "Skincare · Hair Care · Grooming · Fragrances",        img: "/cat3.jpg" },
+  { label: "Bedding & Bath",   sub: "Sheets · Towels · Pillows · Mattress Toppers",        img: "/cat4.jpg" },
+  { label: "Cookware",         sub: "Non-stick Pans · Cast Iron · Kitchen Tools",          img: "/cat5.jpg" },
 ];
 
 /* ─── Components ────────────────────────────────────────── */

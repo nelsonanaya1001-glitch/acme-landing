@@ -143,6 +143,67 @@ function HeroSection() {
   );
 }
 
+function ProductSlideshow() {
+  const [current, setCurrent] = useState(0);
+  const [auto, setAuto] = useState(true);
+
+  useEffect(() => {
+    if (!auto) return;
+    const t = setInterval(() => setCurrent(c => (c + 1) % categories.length), 4000);
+    return () => clearInterval(t);
+  }, [auto]);
+
+  const cat = categories[current];
+  const prev = () => { setAuto(false); setCurrent(c => (c - 1 + categories.length) % categories.length); };
+  const next = () => { setAuto(false); setCurrent(c => (c + 1) % categories.length); };
+
+  return (
+    <section id="products" className="relative h-screen min-h-[600px] overflow-hidden bg-[#0f0f0f]">
+      {/* Slides */}
+      {categories.map((c, i) => (
+        <div key={c.label} className="absolute inset-0 transition-opacity duration-700" style={{ opacity: i === current ? 1 : 0 }}>
+          <Image src={c.img} alt={c.label} fill className="object-cover" sizes="100vw" priority={i === 0} />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
+        </div>
+      ))}
+
+      {/* Top label */}
+      <div className="absolute top-8 left-1/2 -translate-x-1/2 text-center z-10">
+        <p className="text-red-400 text-xs font-bold uppercase tracking-widest font-mono">What We Distribute</p>
+        <h2 className="text-2xl font-black text-white mt-1">Product Categories</h2>
+      </div>
+
+      {/* Content overlay — bottom left */}
+      <div className="absolute bottom-0 left-0 right-0 z-10 px-8 md:px-16 pb-16">
+        <div className="max-w-2xl">
+          <p className="text-red-400 text-xs font-bold uppercase tracking-widest font-mono mb-3">
+            {String(current + 1).padStart(2,"0")} / {String(categories.length).padStart(2,"0")}
+          </p>
+          <h3 className="text-5xl md:text-7xl font-bold text-white uppercase leading-none mb-4" style={{ fontFamily: "var(--font-oswald)" }}>
+            {cat.label}
+          </h3>
+          <p className="text-white/60 text-lg mb-8">{cat.sub}</p>
+          <a href="#contact" className="inline-block px-8 py-3 rounded bg-red-600 hover:bg-red-700 transition-colors font-bold text-white">
+            Enquire Now
+          </a>
+        </div>
+      </div>
+
+      {/* Arrows */}
+      <button onClick={prev} className="absolute left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/50 border border-white/20 hover:bg-red-600 hover:border-red-600 transition-all text-white flex items-center justify-center text-xl">‹</button>
+      <button onClick={next} className="absolute right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/50 border border-white/20 hover:bg-red-600 hover:border-red-600 transition-all text-white flex items-center justify-center text-xl">›</button>
+
+      {/* Dot nav */}
+      <div className="absolute bottom-6 right-8 md:right-16 z-10 flex gap-2 items-center">
+        {categories.map((_, i) => (
+          <button key={i} onClick={() => { setAuto(false); setCurrent(i); }}
+            className={`rounded-full transition-all ${i === current ? "w-8 h-2 bg-red-500" : "w-2 h-2 bg-white/30 hover:bg-white/60"}`} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 /* ═══════════════════════════════════════════════════════════
    PAGE
 ═══════════════════════════════════════════════════════════ */
@@ -167,27 +228,8 @@ export default function Home() {
 
       <HeroSection />
 
-      {/* ── PRODUCTS ── alternating full-width rows */}
-      <section id="products" className="py-24">
-        <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-          <p className="text-red-500 text-xs font-bold uppercase tracking-widest font-mono mb-3">What We Distribute</p>
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900">Product Categories</h2>
-        </div>
-        {categories.map((cat, i) => (
-          <div key={cat.label} className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} min-h-[320px]`}>
-            <div className="relative flex-1 min-h-[220px] md:min-h-0">
-              <Image src={cat.img} alt={cat.label} fill className="object-cover" sizes="50vw" />
-              <div className="absolute inset-0 bg-black/30" />
-            </div>
-            <div className={`flex-1 flex flex-col justify-center px-12 py-12 ${i % 2 === 0 ? "bg-white" : "bg-[#0f0f0f]"}`}>
-              <p className="text-red-500 text-xs font-bold uppercase tracking-widest font-mono mb-3">Category {String(i + 1).padStart(2,"0")}</p>
-              <h3 className={`text-3xl md:text-4xl font-black mb-4 uppercase`} style={{ fontFamily: "var(--font-oswald)", color: i % 2 === 0 ? "#0f172a" : "#ffffff" }}>{cat.label}</h3>
-              <p className={`text-sm leading-relaxed ${i % 2 === 0 ? "text-slate-500" : "text-white/50"}`}>{cat.sub}</p>
-              <a href="#contact" className="mt-6 self-start px-6 py-2.5 rounded bg-red-600 hover:bg-red-700 transition-colors font-semibold text-white text-sm">Enquire Now</a>
-            </div>
-          </div>
-        ))}
-      </section>
+      {/* ── PRODUCTS ── full-screen slideshow */}
+      <ProductSlideshow />
 
       {/* ── ABOUT ── dark full-width with left headline + right cards */}
       <section id="about" className="bg-[#0f0f0f] py-24 px-6">

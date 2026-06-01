@@ -100,7 +100,7 @@ function HeroSection() {
     return () => clearInterval(t);
   }, []);
   return (
-    <section className="relative min-h-screen flex items-end pb-24 px-8 md:px-16 overflow-hidden bg-[#0f0f0f]">
+    <section className="relative min-h-screen flex items-end pb-16 px-8 md:px-16 overflow-hidden bg-[#0f0f0f]">
       {heroSlides.map((src, i) => (
         <div key={src} className="absolute inset-0 transition-opacity duration-1000" style={{ opacity: i === slide ? 1 : 0 }}>
           <Image src={src} alt="" fill className="object-cover opacity-50" sizes="100vw" priority={i === 0} />
@@ -128,15 +128,6 @@ function HeroSection() {
         {heroSlides.map((_, i) => (
           <button key={i} onClick={() => setSlide(i)}
             className={`h-1 rounded-full transition-all ${i === slide ? "w-8 bg-red-500" : "w-3 bg-white/30"}`} />
-        ))}
-      </div>
-      {/* Bottom stat bar */}
-      <div className="absolute bottom-0 left-0 right-0 border-t border-white/10 grid grid-cols-4 divide-x divide-white/10">
-        {[["12,000+","Products"],["200+","Brands"],["48 hrs","Fulfillment"],["99.4%","On-Time"]].map(([n,l]) => (
-          <div key={l} className="py-5 text-center">
-            <p className="text-2xl font-black text-white">{n}</p>
-            <p className="text-white/40 text-xs uppercase tracking-widest mt-0.5">{l}</p>
-          </div>
         ))}
       </div>
     </section>

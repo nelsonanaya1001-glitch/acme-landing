@@ -108,10 +108,6 @@ function HeroSection() {
       ))}
       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40" />
       <div className="relative max-w-3xl">
-        <div className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full bg-red-600/20 border border-red-500/40">
-          <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-          <span className="text-red-300 text-xs font-semibold uppercase tracking-widest">Now Onboarding Partners</span>
-        </div>
         <h1 className="text-6xl md:text-8xl font-bold text-white leading-none mb-6 uppercase" style={{ fontFamily: "var(--font-oswald)" }}>
           Your Supply Chain.<br /><span className="text-red-500">Optimized.</span>
         </h1>

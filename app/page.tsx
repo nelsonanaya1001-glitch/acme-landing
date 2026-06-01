@@ -198,6 +198,56 @@ function ProductSlideshow() {
   );
 }
 
+const brands = ["Shark","Ninja","Keurig","Cuisinart","Hamilton Beach","Braun","Black+Decker","Oster","Bissell","Epson","Canon","Logitech"];
+const BRANDS_PER_SLIDE = 4;
+
+function BrandsSlideshow() {
+  const [current, setCurrent] = useState(0);
+  const slides = Array.from({ length: Math.ceil(brands.length / BRANDS_PER_SLIDE) }, (_, i) =>
+    brands.slice(i * BRANDS_PER_SLIDE, i * BRANDS_PER_SLIDE + BRANDS_PER_SLIDE)
+  );
+
+  useEffect(() => {
+    const t = setInterval(() => setCurrent(c => (c + 1) % slides.length), 3000);
+    return () => clearInterval(t);
+  }, [slides.length]);
+
+  return (
+    <section id="brands" className="py-20 bg-[#0f0f0f] border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-6">
+        <p className="text-red-400 text-xs font-bold uppercase tracking-widest font-mono text-center mb-3">Our Network</p>
+        <h2 className="text-3xl md:text-4xl font-black text-white text-center mb-10">Authorized Brands</h2>
+
+        {/* Slide area */}
+        <div className="relative overflow-hidden">
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${current * 100}%)` }}
+          >
+            {slides.map((group, si) => (
+              <div key={si} className="w-full shrink-0 grid grid-cols-2 md:grid-cols-4 gap-4">
+                {group.map(b => (
+                  <div key={b} className="py-8 px-6 rounded-xl border border-white/10 bg-white/5 text-center hover:border-red-500/40 hover:bg-white/10 transition-all">
+                    <p className="text-white font-black text-lg uppercase tracking-wide">{b}</p>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Dots */}
+        <div className="flex justify-center gap-2 mt-8">
+          {slides.map((_, i) => (
+            <button key={i} onClick={() => setCurrent(i)}
+              className={`rounded-full transition-all ${i === current ? "w-8 h-2 bg-red-500" : "w-2 h-2 bg-white/30 hover:bg-white/60"}`} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ═══════════════════════════════════════════════════════════
    PAGE
 ═══════════════════════════════════════════════════════════ */
@@ -252,18 +302,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── BRANDS ── scrolling marquee on dark bg */}
-      <section id="brands" className="py-20 bg-[#0f0f0f] border-t border-white/10 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 mb-10 text-center">
-          <p className="text-red-400 text-xs font-bold uppercase tracking-widest font-mono mb-3">Our Network</p>
-          <h2 className="text-3xl md:text-4xl font-black text-white">Authorized Brands</h2>
-        </div>
-        <div className="flex gap-3 px-6 flex-wrap justify-center">
-          {["Shark","Ninja","Keurig","Cuisinart","Hamilton Beach","Braun","Black+Decker","Oster","Bissell","Epson","Canon","Logitech"].map(b => (
-            <span key={b} className="px-6 py-3 rounded-full border border-white/20 bg-white/5 text-white/60 hover:text-white hover:border-red-500/50 transition-all text-sm font-bold uppercase tracking-wide cursor-default">{b}</span>
-          ))}
-        </div>
-      </section>
+      {/* ── BRANDS ── slideshow */}
+      <BrandsSlideshow />
 
       {/* ── 3PL ── bold split section */}
       <section className="py-24 px-6 bg-white border-t border-slate-100">

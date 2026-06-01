@@ -158,47 +158,41 @@ function ProductSlideshow() {
   const next = () => { setAuto(false); setCurrent(c => (c + 1) % categories.length); };
 
   return (
-    <section id="products" className="relative h-screen min-h-[600px] overflow-hidden bg-[#0f0f0f]">
-      {/* Slides */}
-      {categories.map((c, i) => (
-        <div key={c.label} className="absolute inset-0 transition-opacity duration-700" style={{ opacity: i === current ? 1 : 0 }}>
-          <Image src={c.img} alt={c.label} fill className="object-cover" sizes="100vw" priority={i === 0} />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
+    <section id="products" className="py-20 px-6 bg-white border-t border-slate-100">
+      <div className="max-w-7xl mx-auto">
+        <p className="text-red-500 text-xs font-bold uppercase tracking-widest font-mono text-center mb-3">What We Distribute</p>
+        <h2 className="text-3xl md:text-4xl font-black text-slate-900 text-center mb-10">Product Categories</h2>
+
+        {/* Slideshow card */}
+        <div className="relative rounded-2xl overflow-hidden h-[420px] shadow-xl">
+          {categories.map((c, i) => (
+            <div key={c.label} className="absolute inset-0 transition-opacity duration-700" style={{ opacity: i === current ? 1 : 0 }}>
+              <Image src={c.img} alt={c.label} fill className="object-cover" sizes="(max-width:768px) 100vw, 80vw" priority={i === 0} />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+            </div>
+          ))}
+
+          {/* Text overlay */}
+          <div className="absolute bottom-0 left-0 right-0 z-10 p-8">
+            <p className="text-red-400 text-xs font-bold uppercase tracking-widest font-mono mb-2">
+              {String(current + 1).padStart(2,"0")} / {String(categories.length).padStart(2,"0")}
+            </p>
+            <h3 className="text-3xl md:text-4xl font-bold text-white uppercase mb-2" style={{ fontFamily: "var(--font-oswald)" }}>{cat.label}</h3>
+            <p className="text-white/60 text-sm">{cat.sub}</p>
+          </div>
+
+          {/* Arrows */}
+          <button onClick={prev} className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-black/50 border border-white/20 hover:bg-red-600 transition-all text-white flex items-center justify-center text-lg">‹</button>
+          <button onClick={next} className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-black/50 border border-white/20 hover:bg-red-600 transition-all text-white flex items-center justify-center text-lg">›</button>
+
+          {/* Dots */}
+          <div className="absolute bottom-4 right-6 z-10 flex gap-1.5">
+            {categories.map((_, i) => (
+              <button key={i} onClick={() => { setAuto(false); setCurrent(i); }}
+                className={`rounded-full transition-all ${i === current ? "w-6 h-1.5 bg-red-500" : "w-1.5 h-1.5 bg-white/40"}`} />
+            ))}
+          </div>
         </div>
-      ))}
-
-      {/* Top label */}
-      <div className="absolute top-8 left-1/2 -translate-x-1/2 text-center z-10">
-        <p className="text-red-400 text-xs font-bold uppercase tracking-widest font-mono">What We Distribute</p>
-        <h2 className="text-2xl font-black text-white mt-1">Product Categories</h2>
-      </div>
-
-      {/* Content overlay — bottom left */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 px-8 md:px-16 pb-16">
-        <div className="max-w-2xl">
-          <p className="text-red-400 text-xs font-bold uppercase tracking-widest font-mono mb-3">
-            {String(current + 1).padStart(2,"0")} / {String(categories.length).padStart(2,"0")}
-          </p>
-          <h3 className="text-5xl md:text-7xl font-bold text-white uppercase leading-none mb-4" style={{ fontFamily: "var(--font-oswald)" }}>
-            {cat.label}
-          </h3>
-          <p className="text-white/60 text-lg mb-8">{cat.sub}</p>
-          <a href="#contact" className="inline-block px-8 py-3 rounded bg-red-600 hover:bg-red-700 transition-colors font-bold text-white">
-            Enquire Now
-          </a>
-        </div>
-      </div>
-
-      {/* Arrows */}
-      <button onClick={prev} className="absolute left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/50 border border-white/20 hover:bg-red-600 hover:border-red-600 transition-all text-white flex items-center justify-center text-xl">‹</button>
-      <button onClick={next} className="absolute right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-black/50 border border-white/20 hover:bg-red-600 hover:border-red-600 transition-all text-white flex items-center justify-center text-xl">›</button>
-
-      {/* Dot nav */}
-      <div className="absolute bottom-6 right-8 md:right-16 z-10 flex gap-2 items-center">
-        {categories.map((_, i) => (
-          <button key={i} onClick={() => { setAuto(false); setCurrent(i); }}
-            className={`rounded-full transition-all ${i === current ? "w-8 h-2 bg-red-500" : "w-2 h-2 bg-white/30 hover:bg-white/60"}`} />
-        ))}
       </div>
     </section>
   );

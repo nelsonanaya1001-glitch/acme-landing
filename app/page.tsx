@@ -173,7 +173,7 @@ function ProductSlideshow() {
   );
 }
 
-const brands = ["Shark","Ninja","Keurig","Cuisinart","Hamilton Beach","Braun","Black+Decker","Oster","Bissell","Epson","Canon","Logitech"];
+const brands = ["Shark","Ninja","Keurig","Cuisinart","Hamilton Beach","Braun","Black+Decker","Oster","Bissell","Epson","Canon","Logitech","+ Many More"];
 const BRANDS_PER_SLIDE = 4;
 
 function BrandsSlideshow() {
@@ -201,7 +201,12 @@ function BrandsSlideshow() {
           >
             {slides.map((group, si) => (
               <div key={si} className="w-full shrink-0 grid grid-cols-2 md:grid-cols-4 gap-4">
-                {group.map(b => (
+                {group.map(b => b === "+ Many More" ? (
+                  <a key={b} href="#contact" className="py-8 px-6 rounded-xl border border-red-500/40 bg-red-600/10 text-center hover:bg-red-600 hover:border-red-600 transition-all group cursor-pointer">
+                    <p className="text-red-400 group-hover:text-white font-black text-lg uppercase tracking-wide">+ Many More</p>
+                    <p className="text-white/30 group-hover:text-white/70 text-xs mt-1">Contact Us</p>
+                  </a>
+                ) : (
                   <div key={b} className="py-8 px-6 rounded-xl border border-white/10 bg-white/5 text-center hover:border-red-500/40 hover:bg-white/10 transition-all">
                     <p className="text-white font-black text-lg uppercase tracking-wide">{b}</p>
                   </div>

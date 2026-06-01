@@ -30,7 +30,6 @@ const categories = [
   { label: "Beauty & Personal",sub: "Skincare · Hair Care · Grooming · Fragrances",        img: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=900&q=80" },
   { label: "Bedding & Bath",   sub: "Sheets · Towels · Pillows · Mattress Toppers",        img: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=900&q=80" },
   { label: "Cookware",         sub: "Non-stick Pans · Cast Iron · Kitchen Tools",          img: "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=900&q=80" },
-  { label: "Toys & Kids",      sub: "Educational · Outdoor · STEM · Creative",             img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" },
 ];
 
 /* ─── Components ────────────────────────────────────────── */

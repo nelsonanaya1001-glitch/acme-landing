@@ -213,6 +213,75 @@ export default function AdminPanel() {
           </div>
         </div>
 
+        {/* Billing & Plan */}
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
+          {/* Current plan */}
+          <div className="bg-[#141414] border border-white/10 rounded-xl p-6">
+            <p className="text-sm font-bold mb-5 text-white/70">Current Plan</p>
+            <div className="flex items-center justify-between mb-5">
+              <div>
+                <p className="text-2xl font-black text-white">Hobby</p>
+                <p className="text-white/30 text-xs mt-0.5">Free plan · nelsonanaya1001-2745</p>
+              </div>
+              <span className="px-3 py-1 rounded-full bg-green-500/20 border border-green-500/30 text-green-400 text-xs font-bold uppercase tracking-wide">Active</span>
+            </div>
+            <div className="space-y-2 mb-6 text-xs text-white/40">
+              {["Unlimited personal projects","100GB bandwidth/mo","Automatic HTTPS","GitHub auto-deploy"].map(f => (
+                <div key={f} className="flex items-center gap-2">
+                  <span className="text-green-400">✓</span>{f}
+                </div>
+              ))}
+            </div>
+            <a
+              href="https://vercel.com/account/billing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-white/10 hover:bg-white/20 transition-colors text-sm font-semibold text-white"
+            >
+              Manage Billing on Vercel ↗
+            </a>
+          </div>
+
+          {/* Domain */}
+          <div className="bg-[#141414] border border-white/10 rounded-xl p-6">
+            <p className="text-sm font-bold mb-5 text-white/70">Domain & Hosting</p>
+            <div className="space-y-3 mb-6">
+              {[
+                { label: "Primary Domain",  value: "elbarullo.com",                   status: "active" },
+                { label: "Vercel URL",      value: "acme-landing-beige.vercel.app",    status: "active" },
+                { label: "Project",         value: "acme-landing",                    status: "active" },
+                { label: "Region",          value: "Washington D.C. (iad1)",           status: null },
+              ].map(d => (
+                <div key={d.label} className="flex items-center justify-between py-2 border-b border-white/5 last:border-0">
+                  <span className="text-white/40 text-xs">{d.label}</span>
+                  <div className="flex items-center gap-2">
+                    {d.status && <span className="w-1.5 h-1.5 rounded-full bg-green-400" />}
+                    <span className="text-white text-xs font-mono">{d.value}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="grid grid-cols-2 gap-2">
+              <a
+                href="https://vercel.com/nelsonanaya1001-2745s-projects/acme-landing/settings/domains"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-1 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 transition-colors text-xs font-semibold text-white"
+              >
+                Manage Domain ↗
+              </a>
+              <a
+                href="https://vercel.com/pricing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-1 py-2.5 rounded-lg bg-red-600 hover:bg-red-700 transition-colors text-xs font-semibold text-white"
+              >
+                Upgrade Plan ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* Recent visitors */}
         <div className="bg-[#141414] border border-white/10 rounded-xl p-6">
           <p className="text-sm font-bold mb-4 text-white/70">Recent Visitors</p>

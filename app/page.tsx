@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 /* ─── FAQ data ──────────────────────────────────────────── */
 const faqs = [
@@ -231,6 +232,14 @@ function BrandsSlideshow() {
 /* ═══════════════════════════════════════════════════════════
    PAGE
 ═══════════════════════════════════════════════════════════ */
+function Tracker() {
+  const path = usePathname();
+  useEffect(() => {
+    fetch("/api/track", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ page: path }) });
+  }, [path]);
+  return null;
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-slate-800 font-sans">
@@ -250,6 +259,7 @@ export default function Home() {
         </div>
       </nav>
 
+      <Tracker />
       <HeroSection />
 
       {/* ── PRODUCTS ── full-screen slideshow */}

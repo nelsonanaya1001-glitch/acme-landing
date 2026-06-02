@@ -1,14 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export function middleware(request: NextRequest) {
-  const session = request.cookies.get("client_session");
-  const { pathname } = request.nextUrl;
+  const clientSession = request.cookies.get("client_session");
+  const adminSession  = request.cookies.get("admin_session");
+  const { pathname }  = request.nextUrl;
 
-  if (pathname.startsWith("/dashboard") && session?.value !== "authenticated") {
+  // Protect /dashboard (client portal)
+  if (pathname.startsWith("/dashboard") && clientSession?.value !== "authenticated") {
     return NextResponse.redirect(new URL("/login", request.url));
   }
 
-  if (pathname === "/login" && session?.value === "authenticated") {
+  // Protect /admin panel
+  if (pathname.startsWith("/admin") && adminSession?.value !== "admin_authenticated") {
+    // Let the page handle login inline — no redirect needed
+  }
+
+  // Redirect already-logged-in users away from login pages
+  if (pathname === "/login" && clientSession?.value === "authenticated") {
     return NextResponse.redirect(new URL("/dashboard", request.url));
   }
 
@@ -16,5 +24,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/dashboard/:path*", "/login"],
+  matcher: ["/dashboard/:path*", "/login", "/admin/:path*", "/admin"],
 };

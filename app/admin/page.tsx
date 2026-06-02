@@ -213,6 +213,72 @@ export default function AdminPanel() {
           </div>
         </div>
 
+        {/* Domain & Site Info */}
+        <div className="grid md:grid-cols-3 gap-6 mb-6">
+          {/* Domain status */}
+          <div className="bg-[#141414] border border-white/10 rounded-xl p-6">
+            <p className="text-sm font-bold mb-5 text-white/70">Domain</p>
+            <div className="space-y-4">
+              {[
+                { label: "Primary",    value: "elbarullo.com",                      status: "live" },
+                { label: "Alias",      value: "acme-landing-beige.vercel.app",      status: "live" },
+                { label: "SSL",        value: "Active — Auto-renews",               status: "live" },
+                { label: "Registered", value: "via Vercel",                         status: null   },
+              ].map(d => (
+                <div key={d.label} className="flex items-center justify-between border-b border-white/5 pb-3 last:border-0 last:pb-0">
+                  <span className="text-white/30 text-xs uppercase tracking-wide">{d.label}</span>
+                  <div className="flex items-center gap-2">
+                    {d.status === "live" && <span className="w-1.5 h-1.5 rounded-full bg-green-400" />}
+                    <span className="text-white text-xs font-mono">{d.value}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Hosting */}
+          <div className="bg-[#141414] border border-white/10 rounded-xl p-6">
+            <p className="text-sm font-bold mb-5 text-white/70">Hosting</p>
+            <div className="space-y-4">
+              {[
+                { label: "Platform",    value: "Vercel"             },
+                { label: "Plan",        value: "Hobby (Free)"       },
+                { label: "Region",      value: "Washington D.C."    },
+                { label: "Framework",   value: "Next.js 16"         },
+                { label: "Repo",        value: "GitHub / main"      },
+                { label: "Auto Deploy", value: "On every push ✓"    },
+              ].map(d => (
+                <div key={d.label} className="flex items-center justify-between border-b border-white/5 pb-3 last:border-0 last:pb-0">
+                  <span className="text-white/30 text-xs uppercase tracking-wide">{d.label}</span>
+                  <span className="text-white text-xs font-mono">{d.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick links */}
+          <div className="bg-[#141414] border border-white/10 rounded-xl p-6">
+            <p className="text-sm font-bold mb-5 text-white/70">Quick Links</p>
+            <div className="flex flex-col gap-2">
+              {[
+                { label: "Visit Live Site",          href: "https://elbarullo.com",                                                            icon: "🌐" },
+                { label: "Vercel Dashboard",         href: "https://vercel.com/nelsonanaya1001-2745s-projects/acme-landing",                   icon: "▲" },
+                { label: "Deployment Logs",          href: "https://vercel.com/nelsonanaya1001-2745s-projects/acme-landing/deployments",       icon: "📋" },
+                { label: "Domain Settings",          href: "https://vercel.com/nelsonanaya1001-2745s-projects/acme-landing/settings/domains",  icon: "🔗" },
+                { label: "GitHub Repo",              href: "https://github.com/nelsonanaya1001-glitch/acme-landing",                          icon: "📦" },
+                { label: "Vercel Analytics",         href: "https://vercel.com/nelsonanaya1001-2745s-projects/acme-landing/analytics",        icon: "📈" },
+              ].map(l => (
+                <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-3 px-4 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 hover:border-red-500/30 border border-transparent transition-all text-xs text-white/70 hover:text-white">
+                  <span>{l.icon}</span>
+                  {l.label}
+                  <span className="ml-auto text-white/20">↗</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Recent visitors */}
         <div className="bg-[#141414] border border-white/10 rounded-xl p-6">
           <p className="text-sm font-bold mb-4 text-white/70">Recent Visitors</p>
